@@ -16,7 +16,7 @@ POLITICAL_PARTIES_SOURCE_URL = 'http://dados.gov.br/dataset/filiados-partidos-po
 print('Finding resources...')
 response = requests.get(POLITICAL_PARTIES_SOURCE_URL)
 soup = BeautifulSoup(response.content, 'html.parser')
-political_parties_resources = [a['href'] for a in soup.find_all('a', {'class': 'resource-url-analytics'}, href=True)][0:5]
+political_parties_resources = [a['href'] for a in soup.find_all('a', {'class': 'resource-url-analytics'}, href=True)]
 
 # Web scraping to get the .csv resources and join them in one
 final_df = pd.DataFrame()
