@@ -84,6 +84,6 @@ errors_dataset = pd.DataFrame(
     columns=['resource_link'],
 )
 errors_dataset.to_csv(datasets_folder + errors_file_name)
-print(f'[2/2] Errors dataset saved in {errors_file_name}')
+print(f'[2/2] Errors dataset saved in "{errors_file_name}"')
 
 print('\nDONE')

@@ -48,13 +48,24 @@ With the project cloned in your computer, go to it's folder and install the proj
 pip3 install -r requirements.txt
 ``` 
 
-## RUNNING THE PROJECT SCRIPTS
+## RUNNING THE PROJECT SCRIPTS AND ANALYSIS
 
 ### [Script] Political Parties Scrapping
+This script is used to generate the dataset with all the affiliates of all the political parties
+from all the Brazilian districts.
 
+This information is scrapped from the ['dados.gov' website](http://dados.gov.br/dataset/filiados-partidos-politicos).
+
+A resulting dataset can be found in the `/datasets` folder with the name `political_parties_data_<DATE>.csv`,
+you can use it instead of generating your own dataset. In this folder you can also find a file called `fetching_errors_<DATE>.csv`
+with the resources from 'dados.gov' that could not be fetched. 
+
+You can generate an updated dataset running:
 ```
-# TODO
+python3 political_parties_scraping.py
 ```
+> But be careful, it may take a long time to finish and the resulting dataset is huge
+ 
 
 ### [Script] Reimbursements Enrichment
 
