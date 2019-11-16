@@ -48,6 +48,28 @@ With the project cloned in your computer, go to it's folder and install the proj
 pip3 install -r requirements.txt
 ``` 
 
+### Setup Mongo DB
+**This is only necessary if you are going to use the [Reimbursements Enrichment script](https://github.com/dehatanes/CEAP-reimbursement-analysis#script-reimbursements-enrichment).**
+
+Create a MongoDB server (you can create one for free [here](https://www.mongodb.com/)) and export your
+connection url, DB/Cluster name and collection name to your environment variables:
+
+```bash
+export MONGO_DB__CONNECTION_URL=<YOUR_MONGO_DB_CONNECTION_URL>
+export MONGO_DB__CLUSTER_NAME=<YOUR_MONGO_DB_CLUSTER_NAME>
+export MONGO_DB__COLLECTION_NAME=<YOUR_MONGO_DB_MONGO_DB__COLLECTION_NAME>
+```
+
+## Setup Receita WS
+**This is only necessary if you are going to use the [Reimbursements Enrichment script](https://github.com/dehatanes/CEAP-reimbursement-analysis#script-reimbursements-enrichment).**
+
+Create an account at [ReceitaWS](https://www.receitaws.com.br/), get your Authentication Token and then
+add it to your environment variables:
+
+```bash
+export RECEITA_WS_API__AUTH_TOKEN=<YOUR_RECEITA_WS_API_AUTH_TOKEN>
+```
+
 ## RUNNING THE PROJECT SCRIPTS AND ANALYSIS
 
 ### [Script] Political Parties Scrapping
@@ -56,22 +78,37 @@ from all the Brazilian districts.
 
 This information is scrapped from the ['dados.gov' website](http://dados.gov.br/dataset/filiados-partidos-politicos).
 
-A resulting dataset can be found in the `/datasets` folder with the name `political_parties_data_<DATE>.csv`,
-you can use it instead of generating your own dataset. In this folder you can also find a file called `fetching_errors_<DATE>.csv`
+The resulting dataset will be stored in a `/datasets` folder with the name `political_parties_data_<DATE>.csv`,
+In this folder you can also find a file called `fetching_errors_<DATE>.csv`
 with the resources from 'dados.gov' that could not be fetched. 
 
 You can generate an updated dataset running:
 ```
 python3 political_parties_scraping.py
 ```
-> But be careful, it may take a long time to finish and the resulting dataset is huge
+> But be careful, it may take a long time to finish and the resulting dataset is huge!
  
 
 ### [Script] Reimbursements Enrichment
 
+This script is used to get all the reimbursements data from [Serenata de Amor Toolbox](https://github.com/okfn-brasil/serenata-toolbox#serenata-de-amor-toolbox)
+(more precisely, the dataset with the reimbursements of 2018) and then enrich this data with
+more information about the supplier for that reimbursement in order to know the owners of 
+the establishment.
+
+We will use an API called [Receita WS](https://www.receitaws.com.br/), where we can use the
+CNPJ of the establishment to get this extra information that we need.
+
+The resulting dataset will be stored in a `/datasets` folder with the name `reimbursements_2018_complete_df.csv`,
+
+You can generate an updated dataset running:
 ```
-# TODO
+python3 reimbursements_enrichment.py
 ```
+> But be careful, it may take a long time to finish and the resulting dataset is huge!
+
+> Also, make sure you follow the Setup to correctly set the necessary environment variables. 
+
 
 ### [Notebook] Reimbursements Establishment Owners Analysis
 
