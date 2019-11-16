@@ -105,3 +105,6 @@ venv.bak/
 
 # IDE
 .idea/
+
+# huge files
+datasets/
