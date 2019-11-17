@@ -34,11 +34,6 @@ You can learn more about how I got this data and how it was handled, enriched an
 * [[Script] Reimbursements Enrichment](https://github.com/dehatanes/CEAP-reimbursement-analysis#script-reimbursements-enrichment)
 * [[Notebook] Reimbursements Establishment Owners Analysis](https://github.com/dehatanes/CEAP-reimbursement-analysis#notebook-reimbursements-establishment-owners-analysis)
 
-## BUILD WITH
-Special thanks for:
-* The Serenata de Amor folks
-* The xpto API
-* The xpto website with he
 
 ## SETUP
 
