@@ -112,9 +112,10 @@ python3 reimbursements_enrichment.py
 
 ### [Notebook] Reimbursements Establishment Owners Analysis
 
-```
-# TODO
-```
+The join of the previously cited data frames and the analysis of the owners of the suppliers
+of the reimbursements are in the [`reimbursements_establishment_owners_analysis.ipynb`](https://github.com/dehatanes/CEAP-reimbursement-analysis/blob/master/reimbursements_establishment_owners_analysis.ipynb).
+
+You can open it as a [Jupyter Notebook file](https://jupyter.org/).
 
 ---
-Made by @dehatanes with :heart:
+Made with :heart: by @dehatanes
