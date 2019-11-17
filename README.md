@@ -4,21 +4,24 @@
 | -------------- | ----------------------------------------------------------:|
 | Language       | [Python 3.7](https://www.python.org/ "Python's Homepage")  |
 
-Checking on the hypothesis that Brazilian politicians are spending public money in establishments owned by people related with political parties.
+Checking on the hypothesis that Brazilian politicians are spending public money 
+destinated to parliamentarian activity in establishments owned by people related 
+to their political parties.
 
-This project is inspired by this [Serenata de Amor](https://github.com/okfn-brasil/serenata-de-amor)'s issue: ["Hypothesis: there are politicians spending mostly with people from the same political party"](https://github.com/okfn-brasil/serenata-de-amor/issues/121)
+This project is inspired by this [Serenata de Amor](https://github.com/okfn-brasil/serenata-de-amor)'s 
+issue: ["Hypothesis: there are politicians spending mostly with people from the same political party"](https://github.com/okfn-brasil/serenata-de-amor/issues/121)
 
 ---
 
 ## ABOUT
-In this project we are going to link political parties affiliates with owners of 
+In this project, we are going to link political parties' affiliates with owners of
 establishments where federal deputies have asked for reimbursement by the CEAP 
 (Quota for the exercise of the Brazilian parliamentary activity).
 
-Since we don't have CPF data of affiliates and owners of establishments, the match 
+Since we don't have the CPF of affiliates and owners of establishments, the match 
 between them is made using their names.
 
-> Important to say that this *is not an accurate way to this match* because homonyms exist.
+> Important to say that this *is not an accurate way to do this match* because homonyms exist.
 But it is still a way to help finding suspicious cases automatically with the same 
 allowances a human would have access to if wanted to perform the same search manually.
 
